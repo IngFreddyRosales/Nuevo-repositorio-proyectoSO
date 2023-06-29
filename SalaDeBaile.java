@@ -56,20 +56,20 @@ public class SalaDeBaile extends JFrame {
     // Método para crear bailarines predeterminados
     private void crearBailarines() {
         // Crear hombres
-        hombres.add(new Bailarin("Hombre1"));
-        hombres.add(new Bailarin("Hombre2"));
-        hombres.add(new Bailarin("Hombre3"));
-        hombres.add(new Bailarin("Hombre4"));
-        hombres.add(new Bailarin("Hombre5"));
-        hombres.add(new Bailarin("Hombre6"));
+        hombres.add(new Bailarin("Bruno"));
+        hombres.add(new Bailarin("Sebastian"));
+        hombres.add(new Bailarin("Fernando"));
+        hombres.add(new Bailarin("Fabricio"));
+        hombres.add(new Bailarin("Favio"));
+        hombres.add(new Bailarin("Paul"));
 
         // Crear mujeres
-        mujeres.add(new Bailarin("Mujer1"));
-        mujeres.add(new Bailarin("Mujer2"));
-        mujeres.add(new Bailarin("Mujer3"));
-        mujeres.add(new Bailarin("Mujer4"));
-        mujeres.add(new Bailarin("Mujer5"));
-        mujeres.add(new Bailarin("Mujer6"));
+        mujeres.add(new Bailarin("Helen"));
+        mujeres.add(new Bailarin("Camila"));
+        mujeres.add(new Bailarin("Mariana"));
+        mujeres.add(new Bailarin("Maria"));
+        mujeres.add(new Bailarin("Carla"));
+        mujeres.add(new Bailarin("Alison"));
         System.out.println("Se crean bailarines");
     }
 
@@ -93,7 +93,7 @@ public class SalaDeBaile extends JFrame {
         for (Pair pareja : parejas) {
             bailar(pareja);
 
-            System.out.println("Empezaron a bailar");
+            System.out.println("Empezaron a bailar"+hombres + mujeres);
 
         }
     }
@@ -135,7 +135,6 @@ public class SalaDeBaile extends JFrame {
     private void actualizarInterfazGrafica() {
         // Implementa la lógica para actualizar la interfaz gráfica con la información de los bailarines y las parejas
         panel.repaint();
-
 
     }
 

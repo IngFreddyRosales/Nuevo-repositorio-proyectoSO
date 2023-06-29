@@ -6,6 +6,7 @@ public class Pair {
         this.hombre = hombre;
         this.mujer = mujer;
     }
+    
 
 
     public Bailarin getHombre() {

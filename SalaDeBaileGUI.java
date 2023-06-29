@@ -33,57 +33,52 @@ public class SalaDeBaileGUI extends JPanel {
 
         for (Bailarin hombre : hombres) {
             g.setColor(Color.BLUE);
-            g.fillRect(xPosHombres, yPosHombres, 30, 30);
-            g.setColor(Color.WHITE);
+            g.fillOval(xPosHombres + SalaDeBaile.WIDTH - 700, yPosHombres, 30, 30);
+            g.setColor(Color.BLACK);
             g.drawString(hombre.getNombre(), xPosHombres, yPosHombres - 5);
             yPosHombres += 40;
         }
 
-        //Dibujar mujeres en espera
+        // Dibujar mujeres en espera
         int xPosMujeres = 2 * SalaDeBaile.WIDTH / 3 + 20;
         int yPosMujeres = 100;
 
         for (Bailarin mujer : mujeres) {
             g.setColor(Color.PINK);
-            g.fillRect(xPosMujeres, yPosMujeres, 30, 30);
-            g.setColor(Color.WHITE);
+            g.fillOval(xPosMujeres + SalaDeBaile.WIDTH - 700, yPosMujeres, 30, 30);
+            g.setColor(Color.BLACK);
             g.drawString(mujer.getNombre(), xPosMujeres, yPosMujeres - 5);
             yPosMujeres += 40;
         }
 
-        //Dibujar bailarines en la pista
+        // Dibujar bailarines en la pista
         int xPosPista = SalaDeBaile.WIDTH / 3 + 40;
         int yPosPista = 100;
         int pistaWidth = SalaDeBaile.WIDTH / 3 - 80;
         int pistaHeight = SalaDeBaile.HEIGHT - 200;
-        g.setColor(Color.GREEN);
-        g.fillRect(xPosPista, yPosPista, pistaWidth, pistaHeight);
+        g.setColor(Color.WHITE);
+        g.fillOval(xPosPista, yPosPista, pistaWidth, pistaHeight);
 
         for (Pair pareja : parejas) {
             Bailarin hombre = pareja.getHombre();
             Bailarin mujer = pareja.getMujer();
 
-            yPosPista += 20;
             if (hombre.isBailando()) {
                 g.setColor(Color.BLUE);
-                g.fillRect(xPosPista, yPosPista, pistaWidth, 30);
-                g.setColor(Color.WHITE);
+                g.fillOval(xPosPista + pistaWidth - 120, yPosPista, 30, 30);
+                g.setColor(Color.BLACK);
                 g.drawString(hombre.getNombre(), xPosPista, yPosPista + 20);
-                yPosPista += 40;
             }
 
-            yPosPista = 100;
             if (mujer.isBailando()) {
                 g.setColor(Color.PINK);
-                g.fillRect(xPosPista, yPosPista, pistaWidth, 30);
-                g.setColor(Color.WHITE);
-                g.drawString(mujer.getNombre(), xPosPista, yPosPista + 20);
-                yPosPista += 40;
-
-
+                g.fillOval(xPosPista + pistaWidth - 50, yPosPista, 30, 30);
+                g.setColor(Color.BLACK);
+                g.drawString(mujer.getNombre(), xPosPista + pistaWidth, yPosPista + 20);
             }
 
-
+            yPosPista += 40;
         }
     }
+
 }
