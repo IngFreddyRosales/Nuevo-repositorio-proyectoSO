@@ -7,11 +7,39 @@ public class SalaDeBaileGUI extends JPanel {
     private List<Bailarin> mujeres;
     private List<Pair> parejas;
 
+    JLabel label;
+
+
     public SalaDeBaileGUI(List<Bailarin> hombre, List<Bailarin> mujeres, List<Pair> parejas) {
         this.hombres = hombre;
         this.mujeres = mujeres;
         this.parejas = parejas;
         setPreferredSize(new Dimension(SalaDeBaile.WIDTH, SalaDeBaile.HEIGHT));
+
+        label = new JLabel("ESPERA");
+        label.setBounds(100, 35, 80, 10);
+        label.setForeground(Color.BLACK);
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setVerticalAlignment(SwingConstants.CENTER);
+        label.setOpaque(true);
+        add(label);
+
+        label = new JLabel("ESPERA");
+        label.setBounds(510, 35, 80, 10);
+        label.setForeground(Color.BLACK);
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setVerticalAlignment(SwingConstants.CENTER);
+        label.setOpaque(true);
+        add(label);
+
+        label = new JLabel("PISTA");
+        label.setBounds(300, 35, 80, 10);
+        label.setForeground(Color.BLACK);
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setVerticalAlignment(SwingConstants.CENTER);
+        label.setOpaque(true);
+        add(label);
+
     }
 
     protected void paintComponent(Graphics g) {
@@ -19,12 +47,14 @@ public class SalaDeBaileGUI extends JPanel {
         drawLines(g);
         drawBailarines(g);
 
+
     }
 
     private void drawLines(Graphics g) {
         g.drawLine(SalaDeBaile.WIDTH / 3, 0, SalaDeBaile.WIDTH / 3, SalaDeBaile.HEIGHT);
         g.drawLine(2 * SalaDeBaile.WIDTH / 3, 0, 2 * SalaDeBaile.WIDTH / 3, SalaDeBaile.HEIGHT);
     }
+
 
     private void drawBailarines(Graphics g) {
         // Dibujar hombres en espera

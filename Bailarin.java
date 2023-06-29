@@ -1,12 +1,16 @@
+import java.util.Random;
+
 public class Bailarin {
     private String nombre;
     private int tiempoBaile;
     private boolean bailando;
+    public Random rn = new Random();
 
     // Constructor
     public Bailarin(String nombre) {
         this.nombre = nombre;
-        this.tiempoBaile = 10; // Tiempo máximo de baile inicial
+        this.tiempoBaile = rn.nextInt(3); // Tiempo máximo de baile inicial
+        System.out.println(this.tiempoBaile);
         this.bailando = false;
     }
 
